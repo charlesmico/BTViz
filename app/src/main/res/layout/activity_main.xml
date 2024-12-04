@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_shade"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/amToolBar_LinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/amAppBar_AppBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="0dp"
+            app:elevation="0dp">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/amToolBar_MaterialToolbar"
+                style="@style/Widget.Material3.Toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white_shade"
+                android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+                android:title="@string/app_name"
+                android:titleTextColor="@color/black_shade"
+                app:menu="@menu/main_activity_toolbar_menu"
+                app:popupTheme="@style/ToolbarPopupMenu" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/amToolBar_LinearLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/amNode_TextInputLayout"
+                style="@style/Widget.Material3.TextInputLayout.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/gray_shade"
+                android:hint="@string/enter_number"
+                app:boxBackgroundColor="@color/gray_shade"
+                app:boxBackgroundMode="filled"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxStrokeColor="@color/black_shade"
+                app:boxStrokeWidthFocused="2dp"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/black_shade"
+                app:hintTextColor="@color/black_shade">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/amNode_TextInputEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number|text"
+                    android:textColor="@color/black_shade" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/amRandomNumber_MaterialButton"
+                style="@style/MaterialButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/gray_shade"
+                android:text="@string/random_node"
+                android:textColor="@color/black_shade"
+                app:backgroundTint="@color/gray_shade"
+                app:cornerRadius="10dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/amInsertNumber_MaterialButton"
+                style="@style/MaterialButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/blue_shade"
+                android:text="@string/insert_node"
+                android:textColor="@color/white_shade"
+                app:backgroundTint="@color/blue_shade"
+                app:cornerRadius="10dp"
+                tools:ignore="RelativeOverlap" />
+
+        </LinearLayout>
+
+        <com.charles.btviz.TreeVisualizer
+            android:id="@+id/amVisualizer_TreeVisualizer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/white_dialog"
+            android:backgroundTint="@color/gray_shade" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

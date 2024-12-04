@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BTViz</string>
+    <string name="meme">-_-</string>
+    <string name="reset">Reset</string>
+    <string name="random_node">Random Node</string>
+    <string name="insert_node">Insert Node</string>
+    <string name="enter_number">Enter number</string>
+</resources>
